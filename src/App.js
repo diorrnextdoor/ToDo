@@ -1,10 +1,46 @@
 import React, { useState } from "react";
-import "./App.css";
-import TodoForm from "./components/ToDoForm";
+import './Designs/App.css';
+import TodoForm from "./components/CreateToDo";
 import TodoItem from "./components/ToDoItem";
+import LoginForm from "./components/LoginForm";
 
 function App() {
+
   const [todos, setTodos] = useState([]);
+
+function renderTasks(tasks) {
+  const tbody = document.querySelector("#tasks tbody");
+  tasks.forEach((task) => {
+    const row = document.createElement('tr');
+
+    const idCell = document.createElement('td');
+    idCell.innerText = task.id;
+    const titleCell = document.createElement('td');
+    titleCell.innerText = task.title;
+    const completedCell = document.createElement('td');
+    completedCell.innerText = task.completed ? "✅" : "❌";
+
+    row.apprendChild(idCell);
+    row.apprendChild(titleCell);
+    row.apprendChild(completedCell);
+    tbody.apprendChild(row)
+  });
+}
+
+  function indexTasks() {
+    fetch('http://localhost:3000/tasks', {
+      method: 'GET',
+      credentials: "include",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => {
+      return response.json();
+    }).then((data) => {
+      renderTasks(data);
+    }).catch(() => {
+      alert("Something went wrong! :(");
+  })
 
   const addTodo = (text) => {
     let id = 1;
@@ -54,6 +90,9 @@ function App() {
       })}
     </div>
   );
+
+  
+}
 }
 
 export default App;
