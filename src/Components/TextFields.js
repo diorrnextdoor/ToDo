@@ -19,9 +19,7 @@ export default function TextFields({ onChange }) {
           id="outlined-basic"
           label="TITEL"
           variant="outlined"
-          onChange={onChange}
-        />
-      </div>
+          onChange={onChange}/> </div>
     </Box>
   );
 }

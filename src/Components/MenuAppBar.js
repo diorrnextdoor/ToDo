@@ -62,9 +62,6 @@ export default function MenuAppBar() {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <button>
-              <Link to={"/home"}>Home</Link>{" "}
-            </button>
-            <button>
               <Link to={"/create"}>Create</Link>
             </button>
           </Typography>
@@ -96,7 +93,7 @@ export default function MenuAppBar() {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Account</MenuItem>
               </Menu>
             </div>
           )}

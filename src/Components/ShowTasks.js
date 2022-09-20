@@ -76,7 +76,7 @@ function ShowTask(onClick) {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Aufgaben Nummer</TableCell>
+                <TableCell>Number of ToDo</TableCell>
                 <TableCell>Title</TableCell>
                 <TableCell>Completed</TableCell>
                 <TableCell></TableCell>

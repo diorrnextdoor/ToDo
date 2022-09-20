@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './Designs/App.css';
-import TodoForm from "./components/CreateToDo";
-import TodoItem from "./components/ToDoItem";
-import LoginForm from "./components/LoginForm";
+import CreateToDo from "./Components/CreateToDo";
+import TodoItem from "./Components/ToDoItem";
+import LoginForm from "./Components/LoginForm";
 
 function App() {
 
@@ -81,7 +81,7 @@ function renderTasks(tasks) {
   return (
     <div className="todo-app">
       <h1>Todo List</h1>
-      <TodoForm addTodo={addTodo} />
+      <CreateToDo addTodo={addTodo} />
       <hr className="seperator"/>
       {sortedTodos.map((todo) => {
         return (
